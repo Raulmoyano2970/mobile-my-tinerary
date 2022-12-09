@@ -3,33 +3,25 @@ import axios from "axios";
 import baseURL from "../../url";
 
 const getHotels = createAsyncThunk("getHotels", async () => {
-  try {
     const res = await axios.get(`${baseURL}api/hotels`);
     return res.data.data;
-  } catch (error) {
-    console.log(error);
-    return {
-      payload: Error,
-    };
-  }
-});
+})
 
 const filterHotels = createAsyncThunk("filterHotels", async (data) => {
   try {
     const res = await axios.get(
-      `${baseURL}api/hotels?name=${data.search}&order=${data.order}`
+      `${baseURL}api/hotels?name=${data.search}`
     );
     let info = {
       response: res.data.data,
       search: data.search,
-      order: data.order,
     };
     return info;
   } catch (error) {
     let info = {
       response: [],
       search: data.search,
-      order: data.order,
+
     };
     return info;
   }

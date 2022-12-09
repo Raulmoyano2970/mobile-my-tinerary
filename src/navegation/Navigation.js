@@ -5,7 +5,9 @@ import { NavigationContainer} from '@react-navigation/native';
 import CitiesScreens from '../screens/CitiesScreens';
 import HotelsScreens from '../screens/HotelsScreens'; 
 import DetailsCity from "../screens/DetailsCity";
+import DetailsHotel from "../screens/DetailsHotel";
 import Itineraries from "../screens/Itineraries";
+import Shows from "../screens/Shows";
 import Home from '../screens/Home';
 import User from '../screens/User';
 import SignUp from '../screens/SignUp';
@@ -35,8 +37,14 @@ function MyStack() {
             name='DetailsCity'
             component={DetailsCity}/>
             <HomeStackNavigator.Screen
+            name='DetailsHotel'
+            component={DetailsHotel}/>
+            <HomeStackNavigator.Screen
             name='Itineraries'
             component={Itineraries}/>
+            <HomeStackNavigator.Screen
+            name='Shows'
+            component={Shows}/>
             <HomeStackNavigator.Screen
             name='SignUp'
             component={SignUp}

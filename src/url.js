@@ -1,4 +1,4 @@
-export let baseURL= "http://192.168.56.1:8000/"
+export let baseURL= "http://192.168.1.41:8000/"
 
 console.log(process.env.NODE_ENV === "production")
 
