@@ -7,7 +7,7 @@ export default function CityCard(props) {
     let { photo, name, navigation, city } = props;
 
     let NavigationContainer = () => {
-        navigation.navigate('CitiesDetails', { city })
+        navigation.navigate('DetailsCity', { city })
     }
 
     const styles = StyleSheet.create({
@@ -32,20 +32,37 @@ export default function CityCard(props) {
             width: 300,
             height: 200,
             margin: 10,
-            shadowOffset: { width: 2, height: 2 },
-            shadowOpacity: 1,
-            shadowRadius: 10,
-            shadowColor: 'green',
+            // shadowOffset: { width: 2, height: 2 },
+            // shadowOpacity: 1,
+            // shadowRadius: 10,
+            // shadowColor: 'green',
         },
     });
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={NavigationContainer}>
                 <ImageBackground source={{ uri: photo }} resizeMode="cover" style={styles.backimage}>
                     <Text style={styles.text}>{name}</Text>
+                    <TouchableOpacity onPress={NavigationContainer}
+                    style={{
+                      backgroundColor: "#1f6e6b",
+                      width: 180,
+                      height: 50,
+                      borderRadius: 20,
+                      justifyContent: "center",
+                      marginBottom: 20,
+                      marginTop: 20
+                    }}
+                    >
+                    <Text
+                        style={{
+                            fontSize: 20,
+                            textAlign: "center",
+                            color: "white",
+                        }}
+                    >More Details</Text>
+                </TouchableOpacity>
                 </ImageBackground>
-            </TouchableOpacity>
         </View>
     )
 }

@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import citiesActions from '../redux/actions/citiesActions'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, Dimensions, ScrollView } from 'react-native'
 import { TextInput } from "react-native-gesture-handler";
+import { useNavigation } from '@react-navigation/native'
 
 export default function CitiesScreens(props) {
   
@@ -13,7 +14,7 @@ export default function CitiesScreens(props) {
   const [searchCities, setSearchCities] = useState('')
   const {cities, search} = useSelector(store => store.cityReducer)
   const { getCities, filterCities } = citiesActions
-
+  const navigation = useNavigation();
   
   useEffect(() => {
     if(search){
@@ -76,8 +77,8 @@ const styles = StyleSheet.create({
             dispatch(filterCities(data))
         }}/>
         <View style={styles.containerCard}>
-            {cities.map(city => <CityCard key={city._id}city={city} name={city.name} navigation={props.navigation} continent={city.continent} photo={city.photo}/>)}
-
+            {cities.map(city => <CityCard key={city._id} city={city} name={city.name} navigation={props.navigation} continent={city.continent} photo={city.photo} />)}
+            
         </View>
       </ScrollView>
       </ImageBackground>

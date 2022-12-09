@@ -4,8 +4,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer} from '@react-navigation/native';
 import CitiesScreens from '../screens/CitiesScreens';
 import HotelsScreens from '../screens/HotelsScreens'; 
-import Home from '../screens/Home'
-import User from '../screens/User'
+import DetailsCity from "../screens/DetailsCity";
+import Itineraries from "../screens/Itineraries";
+import Home from '../screens/Home';
+import User from '../screens/User';
+import SignUp from '../screens/SignUp';
+import SignIn from '../screens/SignIn';
+
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -26,7 +31,24 @@ function MyStack() {
             <HomeStackNavigator.Screen
             name='Hotels'
             component={HotelsScreens}/>
-
+            <HomeStackNavigator.Screen
+            name='DetailsCity'
+            component={DetailsCity}/>
+            <HomeStackNavigator.Screen
+            name='Itineraries'
+            component={Itineraries}/>
+            <HomeStackNavigator.Screen
+            name='SignUp'
+            component={SignUp}
+            options={{
+                headerBackTitleVisible: false,
+            }}/>
+            <HomeStackNavigator.Screen
+            name='SignIn'
+            component={SignIn}
+            options={{
+                headerBackTitleVisible: false,
+            }}/>
         </HomeStackNavigator.Navigator>
     )
 }
@@ -49,7 +71,13 @@ function MyTabs(){
                 )
             }}
             ></Tab.Screen>
-            <Tab.Screen name= 'User' component={User}></Tab.Screen>
+            <Tab.Screen name= 'User' component={User}
+            options={{
+                tabBarIcon: ({ color, size}) =>(
+                    <MaterialCommunityIcons name='login' size={30}/>
+                )
+            }}
+            ></Tab.Screen>
         </Tab.Navigator>
     )
 }
