@@ -43,25 +43,40 @@ export default function SignUp(props) {
             backgroundColor: '#d7e3ff55',
             borderRadius: 20,
           },
+          textTitle: {
+            color: '#1f6e6b',
+            fontSize: 40,
+            textAlign: "center",
+            // textShadowOffset: { width: -1, height: 1 },
+            // textShadowRadius: 10,
+            // textShadowColor: '#063970',
+            fontWeight: 'bold',
+        },
           input:{
             padding: 3,
             fontSize: 16,
-            border: 1,
-            borderRadius: 5,
+            borderWidth: 1,
+            borderRadius: 10,
             // outline: 'none',
             // box-shadow: 3px 3px 5px rgba(3, 3, 3, 0.654);
             textAlign: 'center',
+            backgroundColor: 'rgba(255,255,255,0.5)',
           },
         submit: {
             alignItems: 'center',
             justifyContent: 'center',
             margin: 8,
             border: 2,
-            bordeRadius: 10,
+            bordeRadius: 20,
             padding: 10,
             gap: 2,
             backgroundColor: '#eaf2f4',
             fontWeight: 'bold'
+        },
+        backimage:{
+            width: '100%',
+            height: '100%',
+            justifyContent: "center",
         },
       });
 
@@ -69,15 +84,15 @@ export default function SignUp(props) {
     return (
         <View>
             <ImageBackground source={require('../asset/background.jpg')} resizeMode="cover" style={styles.backimage}>
-                <Text style={styles.subtitle}>Create your account</Text>
+                <Text style={styles.textTitle}>Sign Up</Text>
                 <TextInput style={styles.input} placeholder="Name" onChangeText={(e) => handleInput(e, "name")}/>
                 <TextInput style={styles.input} placeholder="LastName" onChangeText={(e) => handleInput(e, "lastName")}/>
                 <TextInput style={styles.input} placeholder="Age" onChangeText={(e) => handleInput(e, "age")}/>
                 <TextInput style={styles.input} placeholder="Photo" onChangeText={(e) => handleInput(e, "photo")}/>
                 <TextInput style={styles.input} placeholder="Email" onChangeText={(e) => handleInput(e, "email")}/>
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} password={true} onChangeText={(e) => handleInput(e, "password")}/>
-                <View >
-                    <Text style={styles.submit} onPress={handleSubmit}>Create account</Text>
+                <View style={styles.submit}>
+                    <Text onPress={handleSubmit}>Create</Text>
                 </View>
             </ImageBackground>
         </View>
