@@ -12,6 +12,7 @@ import Home from '../screens/Home';
 import User from '../screens/User';
 import SignUp from '../screens/SignUp';
 import SignIn from '../screens/SignIn';
+import Profile from "../screens/Profile"
 
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -42,6 +43,9 @@ function MyStack() {
             <HomeStackNavigator.Screen
             name='Itineraries'
             component={Itineraries}/>
+            <HomeStackNavigator.Screen
+            name='Profile'
+            component={Profile}/>
             <HomeStackNavigator.Screen
             name='Shows'
             component={Shows}/>
@@ -98,3 +102,5 @@ export default function Navigation(){
     )
 
 }
+
+//esperar para poder completar
